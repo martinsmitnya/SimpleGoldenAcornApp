@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react'
+import React, { useEffect } from "react";
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class App extends React.Component {
     // This binding is necessary to make `this` work in the callback
     this.handleBuy = this.handleBuy.bind(this);
     this.handleEat = this.handleEat.bind(this);
-    this.onKeyUp = this.onKeyUp.bind(this);
   }
 
   handleBuy() {
@@ -22,18 +21,19 @@ class App extends React.Component {
       this.setState({cookies: this.state.cookies -1});
     }
   }
-
-  onKeyUp() {
-      console.log('hello');
-    
+  
+  componentDidMount() {
+    document.addEventListener('keydown', (event)=> {
+      console.log(event.key);
+      if(event.key === 'ArrowUp') {
+        this.setState({cookies: this.state.cookies +1});
+      } else if (event.key === 'ArrowDown') {
+        if (this.state.cookies > 0) {
+          this.setState({cookies: this.state.cookies -1});
+        }
+      }
+    }) 
   }
-    // if(event.key = 'ArrowUp') {
-    //   this.setState({cookies: this.state.cookies +1});
-    // } else if (event.key = 'ArrowDown') {
-    //   if (this.state.cookies > 0) {
-    //     this.setState({cookies: this.state.cookies -1});
-    //   }
-    // }
 
   
 
