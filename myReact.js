@@ -7,10 +7,7 @@
 */
 
 const reactContentRoot = document.getElementById('root');
-
-ReactDOM.render('Hello', reactContentRoot);
-
+ReactDOM.render('Hello there', reactContentRoot);
 
 //...OR
 // create-react-app myAppName
-console.log(ReactDOM)
