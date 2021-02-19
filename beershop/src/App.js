@@ -100,7 +100,10 @@ function TemplateFunction() {
     .catch( error => console.log(error))
   }, []);
 
-  return (
+  return ( 
+    <div>
     <p>{state}</p>
+    <p>{state}</p>
+    </div>
   )
 } 
