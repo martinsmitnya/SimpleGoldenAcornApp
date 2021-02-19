@@ -89,21 +89,3 @@ function Beertitle() {
     </div>
   </div>)
 }
-
-
-
-function TemplateFunction() {
-  const [state, setState] = useState(0);
-
-  useEffect( ()=> {
-    fetch('https://api.punkapi.com/v2/beers?page=1').then(response => response.json()).then(data => setState(data[0].tagline))
-    .catch( error => console.log(error))
-  }, []);
-
-  return ( 
-    <div>
-    <p>{state}</p>
-    <p>{state}</p>
-    </div>
-  )
-} 
